@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <ProfileOverview></ProfileOverview>
   </div>
 </template>
@@ -13,10 +13,12 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 body {
   margin: 0;
   padding: 0;
 }
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 </style>
 
