@@ -4,24 +4,29 @@
       class="profile"
       v-for="(profile, index) in profiles"
       :key="index"
+      @click="setProfile(index)"
       :style="{
         'background-image':
           'url(' + require('../assets/' + profile.images[0]) + ')',
       }"
     >
-      <div class="overlay">
+      <div :class="'overlay ' + profile.style">
         <h2>{{ profile.name }}</h2>
         <span> <font-awesome-icon icon="gamepad" /> {{ profile.edition }}</span>
       </div>
     </div>
+    <ProfilePage v-if="active" :profile="activeProfile" />
   </div>
 </template>
 
 <script>
+import ProfilePage from "./ProfilePage.vue";
+
 export default {
   data: () => {
     return {
-      //TestDate
+      active: false,
+      activeProfile: {},
       profiles: [
         {
           name: "Call of duty",
@@ -29,7 +34,7 @@ export default {
           description: "ffzefezfzefeza",
           images: ["cod1.jpg", "cod2.jpg", "cod3.jpg", "cod4.jpeg"],
           like: false,
-          Type: "video Games",
+          style: "fps1",
         },
 
         {
@@ -38,7 +43,7 @@ export default {
           description: "ffzefezfzefeza",
           images: ["battlefield.jpeg"],
           like: false,
-          Type: "video Games",
+          style: "fps2",
         },
 
         {
@@ -47,7 +52,7 @@ export default {
           description: "ffzefezfzefeza",
           images: ["doom.jpg"],
           like: false,
-          Type: "video Games",
+          style: "fps3",
         },
 
         {
@@ -56,10 +61,20 @@ export default {
           description: "ffzefezfzefeza",
           images: ["halo.jpeg"],
           like: false,
-          Type: "video Games",
+          style: "fps4",
         },
       ],
     };
+  },
+  methods: {
+    setProfile(index) {
+      this.activeProfile = this.profiles[index];
+      this.active = true;
+    },
+  },
+
+  components: {
+    ProfilePage,
   },
 };
 </script>
@@ -95,11 +110,30 @@ export default {
       rgba($color: #fff, $alpha: 0) 0%,
       rgba($color: #fff, $alpha: 1) 100%
     );
+
     h2 {
       font-size: 2rem;
       padding: 0;
       margin: 0;
     }
+
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+
+  .fps1 {
+    color: #845ec2;
+  }
+  .fps2 {
+    color: #d65db1;
+  }
+  .fps3 {
+    color: #ff6f91;
+  }
+  .fps4 {
+    color: #ff9671;
   }
 }
 </style>
