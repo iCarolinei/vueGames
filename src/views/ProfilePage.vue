@@ -23,8 +23,10 @@
         />
       </div>
       <div class="overlay">
-        <h1>{{ profile.name }}</h1>
-        <span><font-awesome-icon icon="gamepad" /> {{ profile.edition }}</span>
+        <h1 class="overlay-name">{{ profile.name }}</h1>
+        <span class="overlay-style"
+          ><font-awesome-icon icon="gamepad" /> {{ profile.edition }}</span
+        >
         <p>{{ profile.description }}</p>
         <div class="gallery">
           <div
@@ -33,11 +35,13 @@
             v-for="(image, index) in profile.images"
             :key="index"
           >
-            <img
-              :src="require('../assets/' + image)"
-              @click="activeImg = image"
-              alt=""
-            />
+            <span class="img-container">
+              <img
+                :src="require('../assets/' + image)"
+                @click="activeImg = image"
+                alt=""
+              />
+            </span>
           </div>
         </div>
       </div>
@@ -149,6 +153,7 @@ export default {
     padding: 100px 20px 10px;
     font-family: "DotGothic16", sans-serif;
     color: white;
+    text-align: center;
     h1 {
       font-size: 4.8rem;
       line-height: 4.8rem;
@@ -156,7 +161,13 @@ export default {
       margin: 0;
       padding: 0;
     }
-
+    .overlay-name {
+      margin-bottom: 20px !important;
+    }
+    .overlay-style {
+      font-size: 20px;
+      font-weight: 600;
+    }
     p {
       font-style: italic;
       width: 100%;
@@ -177,9 +188,14 @@ export default {
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2),
           0 10px 10px rgba(0, 0, 0, 0.2);
         transition: transform 0.2s linear;
+        .img-container {
+          text-align: center;
+          display: block;
+        }
         img {
           max-width: 80px;
-          height: auto;
+          height: 80px;
+          object-fit: cover;
         }
       }
       .inactiv {
