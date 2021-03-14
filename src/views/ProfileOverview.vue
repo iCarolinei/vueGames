@@ -37,7 +37,8 @@ export default {
         {
           name: "Call of duty",
           edition: "Activision",
-          description: "ffzefezfzefeza",
+          description:
+            "Call of Duty is a first-person shooter video game franchise published by Activision. Starting out in 2003, it first focused on games set in World War II. Over time, the series has seen games set in the midst of the Cold War, futuristic worlds, and outer space.",
           images: ["cod1.jpg", "cod2.jpg", "cod3.jpg", "cod4.jpeg"],
           like: false,
           style: "fps1",
@@ -46,7 +47,8 @@ export default {
         {
           name: "Battlefield",
           edition: "Electronic Arts",
-          description: "ffzefezfzefeza",
+          description:
+            "Battlefield is a series of first-person shooter video games that started out on Microsoft Windows and OS X with Battlefield 1942, which was released in 2002. The series is developed by Swedish company EA DICE and is published by American company Electronic Arts.",
           images: ["battlefield.jpeg"],
           like: false,
           style: "fps2",
@@ -55,7 +57,8 @@ export default {
         {
           name: "Doom",
           edition: "Bethesda",
-          description: "ffzefezfzefeza",
+          description:
+            "Doom is considered one of the pioneering first-person shooter games, introducing to IBM-compatible computers features such as 3D graphics, third-dimension spatiality, networked multiplayer gameplay, and support for player-created modifications with the Doom WAD format. ",
           images: ["doom.jpg"],
           like: false,
           style: "fps3",
@@ -64,7 +67,8 @@ export default {
         {
           name: "Halo",
           edition: "Microsoft",
-          description: "ffzefezfzefeza",
+          description:
+            "Halo is an American military science fiction media franchise managed and developed by 343 Industries and published by Xbox Game Studios. The franchise and its early main installments were originally developed by Bungie. The central focus of the franchise builds off the experiences of Master Chief John-117.",
           images: ["halo.jpeg"],
           like: false,
           style: "fps4",
@@ -121,7 +125,7 @@ export default {
     );
 
     h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       padding: 0;
       margin: 0;
     }
