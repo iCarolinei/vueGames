@@ -15,7 +15,7 @@ npm run serve
 npm run build
 ```
 
-## A project of video game profiles
+## Fun project with global video games profiles and each detailed profiles
 
 ## 🔗 Project link
 * [LINK](https://peaceful-jennings-bc0dff.netlify.app/)
