@@ -15,7 +15,7 @@
         <span> <font-awesome-icon icon="gamepad" /> {{ profile.edition }}</span>
       </div>
     </div>
-    <ProfilePage v-if="active" :profile="activeProfile" />
+    <ProfilePage v-if="active" :profile="activeProfile" @close="closeProfile" />
   </div>
 </template>
 
@@ -70,6 +70,9 @@ export default {
     setProfile(index) {
       this.activeProfile = this.profiles[index];
       this.active = true;
+    },
+    closeProfile() {
+      this.active = false;
     },
   },
 
