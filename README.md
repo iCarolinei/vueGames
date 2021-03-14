@@ -25,9 +25,6 @@ npm run build
 * SCSS
 * JavaScript 
 
-## 📚 Library
-* Bootstrap
-
 ## ❤️ Framework
 * Vue.js
 
