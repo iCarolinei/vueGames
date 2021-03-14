@@ -155,14 +155,14 @@ export default {
     color: white;
     text-align: center;
     h1 {
-      font-size: 4.8rem;
-      line-height: 4.8rem;
+      font-size: 4.5rem;
+      line-height: 4.5rem;
       font-weight: bold;
       margin: 0;
       padding: 0;
     }
     .overlay-name {
-      margin-bottom: 20px !important;
+      margin-bottom: 10px !important;
     }
     .overlay-style {
       font-size: 20px;
