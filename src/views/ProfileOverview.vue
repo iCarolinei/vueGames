@@ -15,7 +15,13 @@
         <span> <font-awesome-icon icon="gamepad" /> {{ profile.edition }}</span>
       </div>
     </div>
-    <ProfilePage v-if="active" :profile="activeProfile" @close="closeProfile" />
+    <transition name="fade">
+      <ProfilePage
+        v-if="active"
+        :profile="activeProfile"
+        @close="closeProfile"
+      />
+    </transition>
   </div>
 </template>
 
@@ -138,6 +144,14 @@ export default {
   .fps4 {
     color: #ff9671;
   }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s linear;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
 

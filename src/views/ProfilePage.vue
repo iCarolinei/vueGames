@@ -22,6 +22,25 @@
           @click="profile.like = !profile.like"
         />
       </div>
+      <div class="overlay">
+        <h1>{{ profile.name }}</h1>
+        <span><font-awesome-icon icon="gamepad" /> {{ profile.edition }}</span>
+        <p>{{ profile.description }}</p>
+        <div class="gallery">
+          <div
+            class="gallery-img"
+            :class="{ inactiv: activeImg !== image }"
+            v-for="(image, index) in profile.images"
+            :key="index"
+          >
+            <img
+              :src="require('../assets/' + image)"
+              @click="activeImg = image"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -116,6 +135,64 @@ export default {
       font-size: 3rem;
       cursor: pointer;
       color: white;
+      transition: color 0.4s linear;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 40px);
+    padding: 100px 20px 10px;
+    font-family: "DotGothic16", sans-serif;
+    color: white;
+    h1 {
+      font-size: 4.8rem;
+      line-height: 4.8rem;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      font-style: italic;
+      width: 100%;
+    }
+    .gallery {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100px;
+
+      .gallery-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2),
+          0 10px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s linear;
+        img {
+          max-width: 80px;
+          height: auto;
+        }
+      }
+      .inactiv {
+        opacity: 0.7;
+        box-shadow: none;
+        transition: transform 0.2s linear;
+        &:hover {
+          opacity: 1;
+          transform: scale(1.1);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2),
+            0 10px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
     }
   }
 }
