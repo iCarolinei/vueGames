@@ -96,7 +96,7 @@ export default {
     left: 0;
     padding: 20px;
 
-    .angle-left {
+    .fa-angle-left {
       font-size: 4rem;
       cursor: pointer;
       color: white;
@@ -112,7 +112,7 @@ export default {
       color: red;
     }
 
-    .heart {
+    .fa-heart {
       font-size: 3rem;
       cursor: pointer;
       color: white;
