@@ -109,7 +109,7 @@ export default {
     padding: 25px 20px;
 
     .red {
-      color: red;
+      color: red !important;
     }
 
     .fa-heart {
